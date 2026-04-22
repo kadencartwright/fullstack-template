@@ -1,0 +1,15 @@
+node_modules/
+.turbo/
+dist/
+storybook-static/
+.nitro/
+.output/
+coverage/
+.DS_Store
+
+.env
+.env.local
+.env.*.local
+
+apps/frontend/convex/.convex/
+apps/frontend/convex/_generated/

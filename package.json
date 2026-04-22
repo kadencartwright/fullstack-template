@@ -1,0 +1,33 @@
+{
+  "name": "fullstack-template",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.1",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "build:storybook": "turbo run build-storybook --filter=@fullstack-template/storybook",
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "dev": "turbo run dev --parallel",
+    "dev:convex": "pnpm --filter @fullstack-template/frontend convex:dev",
+    "dev:frontend": "pnpm --filter @fullstack-template/frontend dev",
+    "dev:storybook": "pnpm --filter @fullstack-template/storybook storybook",
+    "format": "biome check --write .",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.12",
+    "turbo": "2.9.6",
+    "typescript": "6.0.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lightningcss"
+    ]
+  }
+}

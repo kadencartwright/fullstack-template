@@ -1,0 +1,16 @@
+@import "@fullstack-template/ui/styles.css";
+
+body {
+  background:
+    radial-gradient(
+      circle at top left,
+      color-mix(in srgb, hsl(var(--primary)) 12%, transparent),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at top right,
+      color-mix(in srgb, hsl(var(--ring)) 16%, transparent),
+      transparent 24%
+    ),
+    hsl(var(--background));
+}

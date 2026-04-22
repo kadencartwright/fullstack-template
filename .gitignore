@@ -5,6 +5,8 @@ storybook-static/
 .nitro/
 .output/
 coverage/
+playwright-report/
+test-results/
 .DS_Store
 
 .env
@@ -13,3 +15,5 @@ coverage/
 
 apps/frontend/convex/.convex/
 apps/frontend/convex/_generated/
+apps/frontend/playwright-report/
+apps/frontend/test-results/

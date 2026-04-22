@@ -9,10 +9,14 @@
     "build": "vite build",
     "convex:deploy": "convex deploy",
     "convex:dev": "convex dev",
-    "dev": "vite dev --port 3000",
+    "dev": "portless run vite dev",
+    "dev:direct": "vite dev --host 127.0.0.1 --port ${PORT:-3000}",
     "lint": "biome check .",
     "preview": "vite preview",
     "test": "vitest run",
+    "test:e2e": "PORTLESS=0 PORT=${PORT:-39147} playwright test tests/e2e/home.spec.ts",
+    "test:e2e:docker": "../../scripts/run-playwright-docker.sh",
+    "test:e2e:headed": "PORTLESS=0 PORT=${PORT:-39147} playwright test --headed tests/e2e/home.spec.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -31,6 +35,7 @@
     "tailwindcss": "4.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "1.53.1",
     "@biomejs/biome": "2.4.12",
     "@testing-library/dom": "10.4.1",
     "@testing-library/react": "16.3.2",
@@ -39,6 +44,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.1",
     "jsdom": "29.0.2",
+    "portless": "0.10.3",
     "typescript": "6.0.3",
     "vite": "8.0.9",
     "vitest": "4.1.5"

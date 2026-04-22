@@ -16,11 +16,21 @@
     "dev:storybook": "pnpm --filter @fullstack-template/storybook storybook",
     "format": "biome check --write .",
     "lint": "turbo run lint",
+    "prepare": "husky",
+    "secrets:staged": "gitleaks git --staged --redact .",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck"
+    "test:e2e": "pnpm --filter @fullstack-template/frontend test:e2e",
+    "test:e2e:docker": "pnpm --filter @fullstack-template/frontend test:e2e:docker",
+    "test:e2e:headed": "pnpm --filter @fullstack-template/frontend test:e2e:headed",
+    "typecheck": "turbo run typecheck",
+    "worktree:cleanup": "./scripts/worktree-cleanup.sh",
+    "worktree:create": "./scripts/worktree-create.sh",
+    "worktree:setup": "./scripts/worktree-setup.sh"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.12",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "turbo": "2.9.6",
     "typescript": "6.0.3"
   },
